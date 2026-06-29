@@ -1,0 +1,17 @@
+  :root{
+    --blue:#1565C0;
+    --blue-dark:#0D47A1;
+    --blue-light:#E3F2FD;
+    --green:#2E9E6B;
+    --green-light:#E6F7EF;
+    --white:#ffffff;
+    --grey:#f6f9fc;
+    --text:#2b3640;
+    --text-light:#637381;
+    --radius:16px;
+    --shadow:0 10px 30px rgba(13,71,161,0.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden;}
+  h1,h2,h3,h4,h5{font-family:'Poppins',sans-serif;color:var(--blue-dark);}
