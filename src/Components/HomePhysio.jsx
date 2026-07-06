@@ -1,8 +1,12 @@
+import homePhysioImage from "../assets/generated-home-physio.jpg";
+
 function Homephysio(){
 return(
     <section className="services-bg">
   <div className="container split">
-    <div className="split-img"></div>
+    <figure className="split-img">
+      <img src={homePhysioImage} alt="Home physiotherapy session" />
+    </figure>
     <div className="split-list">
       <span className="section-tag">Why Home Physiotherapy?</span>
       <h2 style={{marginBottom:"24px"}}>Recover Better, In Comfort</h2>

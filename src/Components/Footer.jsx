@@ -1,3 +1,5 @@
+import logo from "../assets/corvia-logo.jpg";
+
 function Footer() {
   return (
     <>
@@ -5,7 +7,9 @@ function Footer() {
         <div className="container">
           <div className="footer-grid">
             <div>
-              <h4>Corvia Rehab</h4>
+              <a href="/" className="footer-logo" aria-label="Corvia Rehab home">
+                <img src={logo} alt="Corvia Rehab" />
+              </a>
               <p>
                 Restoring Movement, Rebuilding Independence. Professional
                 physiotherapy and rehabilitation delivered to your home.

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../assets/corvia-logo.jpg";
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -8,9 +9,8 @@ function Header() {
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
 
         {/* Logo */}
-        <a href="/" className="text-[38px] font-extrabold tracking-tight">
-          <span className="text-[#0D47A1]">Corvia</span>{" "}
-          <span className="text-[#2E9E6B]">Rehab</span>
+        <a href="/" className="site-logo" aria-label="Corvia Rehab home">
+          <img src={logo} alt="Corvia Rehab" />
         </a>
 
         {/* Desktop Menu */}
@@ -67,18 +67,14 @@ function Header() {
             📞 +91 00000 00000
           </a>
 
-          <a
-            href="https://wa.me/910000000000"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#2E9E6B] text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-[#27895e] transition"
-          >
-            Book Home Visit
-          </a>
         </div>
 
         {/* Mobile Button */}
         <button
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
           onClick={() => setOpen(!open)}
           className="lg:hidden flex flex-col gap-1"
         >
@@ -104,7 +100,7 @@ function Header() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="lg:hidden bg-white border-t">
+        <div id="mobile-menu" className="lg:hidden bg-white border-t">
           <ul className="flex flex-col px-8 py-6 gap-5 text-lg">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -114,12 +110,16 @@ function Header() {
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
 
-            <a
-              href="https://wa.me/910000000000"
-              className="bg-[#2E9E6B] text-white text-center py-3 rounded-full font-semibold mt-4"
-            >
-              Book Home Visit
-            </a>
+            <li>
+              <a
+                href="https://wa.me/910000000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-[#2E9E6B] text-white text-center py-3 rounded-full font-semibold mt-4"
+              >
+                Book Home Visit
+              </a>
+            </li>
           </ul>
         </div>
       )}
