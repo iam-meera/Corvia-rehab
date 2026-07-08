@@ -100,7 +100,7 @@ a{text-decoration:none;}
   /* TESTIMONIALS */
   .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   .testi-card{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);}
-  .testi-card .stars{color:#f5a623;margin-bottom:12px;font-size:15px;}
+  .testi-card .stars{color:#f5a623;margin-bottom:12px;font-size:15px;display:flex;gap:3px;}
   .testi-card p{font-size:14.5px;color:var(--text-light);margin-bottom:18px;}
   .testi-card .who{display:flex;align-items:center;gap:12px;}
   .testi-card .avatar{width:42px;height:42px;border-radius:50%;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--blue-dark);}
@@ -110,10 +110,11 @@ a{text-decoration:none;}
   /* FAQ */
   .faq-list{max-width:780px;margin:0 auto;}
   .faq-item{border:1px solid #e6ebf0;border-radius:12px;margin-bottom:14px;overflow:hidden;}
-  .faq-q{padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:15.5px;background:#fff;}
+  .faq-q{width:100%;border:0;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:15.5px;background:#fff;color:var(--text);text-align:left;font-family:inherit;}
   .faq-q .plus{font-size:20px;color:var(--green);transition:.25s;}
   .faq-item.active .faq-q .plus{transform:rotate(45deg);}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;background:var(--grey);}
+  .faq-item.active .faq-a{max-height:160px;}
   .faq-a p{padding:0 22px 18px;font-size:14.5px;color:var(--text-light);}
 
   /* CONTACT */

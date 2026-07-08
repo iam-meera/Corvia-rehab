@@ -1,3 +1,5 @@
+import { FaEnvelope, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+
 function Contact() {
   return (
     <section className="contact-bg" id="contact">
@@ -23,29 +25,27 @@ function Contact() {
 
         <div className="contact-grid">
           <div className="contact-card">
-            <div className="icon">📞</div>
+            <div className="icon"><FaPhoneAlt aria-hidden="true" /></div>
             <h4>Phone Number</h4>
-            <a href="tel:+910000000000">+91 00000 00000</a>
+            <a href="tel:+919656074605">+91 96560 74605</a>
           </div>
 
           <div className="contact-card">
-            <div className="icon">💬</div>
+            <div className="icon"><FaWhatsapp aria-hidden="true" /></div>
             <h4>WhatsApp Number</h4>
             <a
-              href="https://wa.me/910000000000"
+              href="https://wa.me/919656074605"
               target="_blank"
               rel="noopener noreferrer"
             >
-              +91 00000 00000
+              +91 96560 74605
             </a>
           </div>
 
           <div className="contact-card">
-            <div className="icon">✉️</div>
+            <div className="icon"><FaEnvelope aria-hidden="true" /></div>
             <h4>Email Address</h4>
-            <a href="mailto:info@corviarehab.com">
-              info@corviarehab.com
-            </a>
+            <a href="mailto:corviarehab@gmail.com">corviarehab@gmail.com</a>
           </div>
         </div>
 
@@ -62,11 +62,11 @@ function Contact() {
         <div className="contact-cta">
           <a
             className="btn btn-primary"
-            href="https://wa.me/910000000000"
+            href="https://wa.me/919656074605"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Book Your Home Visit Today
+            <FaWhatsapp aria-hidden="true" /> Book Your Home Visit Today
           </a>
         </div>
       </div>

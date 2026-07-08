@@ -40,11 +40,11 @@ function Footer() {
               <h4>Contact</h4>
               <ul>
                 <li>
-                  <a href="tel:+910000000000">+91 00000 00000</a>
+                  <a href="tel:+919656074605">+91 96560 74605</a>
                 </li>
                 <li>
-                  <a href="mailto:info@corviarehab.com">
-                    info@corviarehab.com
+                  <a href="mailto:corviarehab@gmail.com">
+                    corviarehab@gmail.com
                   </a>
                 </li>
               </ul>
