@@ -1,6 +1,17 @@
 import { useState } from "react";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/corvia-logo.jpg";
+
+const navItems = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Services", to: "/services" },
+  { label: "Conditions", to: "/conditions" },
+  { label: "Testimonials", to: "/testimonials" },
+  { label: "FAQ", to: "/faq" },
+  { label: "Contact", to: "/contact" },
+];
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -10,18 +21,24 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
-        <a href="/" className="site-logo" aria-label="Corvia Rehab home">
+        <Link to="/" className="site-logo" aria-label="Corvia Rehab home">
           <img src={logo} alt="Corvia Rehab" />
-        </a>
+        </Link>
 
         <ul className="hidden lg:flex items-center gap-10 text-[17px] font-medium text-gray-800">
-          <li><a href="#home" className="hover:text-[#2E9E6B] transition">Home</a></li>
-          <li><a href="#about" className="hover:text-[#2E9E6B] transition">About</a></li>
-          <li><a href="#services" className="hover:text-[#2E9E6B] transition">Services</a></li>
-          <li><a href="#conditions" className="hover:text-[#2E9E6B] transition">Conditions</a></li>
-          <li><a href="#testimonials" className="hover:text-[#2E9E6B] transition">Testimonials</a></li>
-          <li><a href="#faq" className="hover:text-[#2E9E6B] transition">FAQ</a></li>
-          <li><a href="#contact" className="hover:text-[#2E9E6B] transition">Contact</a></li>
+          {navItems.map((item) => (
+            <li key={item.to}>
+              <NavLink
+                to={item.to}
+                end={item.to === "/"}
+                className={({ isActive }) =>
+                  `hover:text-[#2E9E6B] transition ${isActive ? "text-[#2E9E6B]" : ""}`
+                }
+              >
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
 
         <div className="hidden lg:flex items-center gap-6">
@@ -50,13 +67,13 @@ function Header() {
       {open && (
         <div id="mobile-menu" className="lg:hidden bg-white border-t">
           <ul className="flex flex-col px-8 py-6 gap-5 text-lg">
-            <li><a href="#home" onClick={closeMenu}>Home</a></li>
-            <li><a href="#about" onClick={closeMenu}>About</a></li>
-            <li><a href="#services" onClick={closeMenu}>Services</a></li>
-            <li><a href="#conditions" onClick={closeMenu}>Conditions</a></li>
-            <li><a href="#testimonials" onClick={closeMenu}>Testimonials</a></li>
-            <li><a href="#faq" onClick={closeMenu}>FAQ</a></li>
-            <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+            {navItems.map((item) => (
+              <li key={item.to}>
+                <NavLink to={item.to} end={item.to === "/"} onClick={closeMenu}>
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
 
             <li>
               <a

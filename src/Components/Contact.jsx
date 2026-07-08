@@ -1,4 +1,5 @@
 import { FaEnvelope, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import ServiceAreas from "./ServiceAreas";
 
 function Contact() {
   return (
@@ -49,15 +50,7 @@ function Contact() {
           </div>
         </div>
 
-        <p
-          style={{
-            textAlign: "center",
-            marginBottom: "24px",
-            color: "#cfe3fb",
-          }}
-        >
-          Service Areas Covered: Add your serviceable cities/localities here.
-        </p>
+        <ServiceAreas theme="dark" />
 
         <div className="contact-cta">
           <a
