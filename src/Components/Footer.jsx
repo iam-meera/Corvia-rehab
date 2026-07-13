@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import logo from "../assets/corvia-logo.jpg";
+
 function Footer() {
   return (
     <>
@@ -5,7 +8,9 @@ function Footer() {
         <div className="container">
           <div className="footer-grid">
             <div>
-              <h4>Corvia Rehab</h4>
+              <Link to="/" className="footer-logo" aria-label="Corvia Rehab home">
+                <img src={logo} alt="Corvia Rehab" />
+              </Link>
               <p>
                 Restoring Movement, Rebuilding Independence. Professional
                 physiotherapy and rehabilitation delivered to your home.
@@ -15,20 +20,20 @@ function Footer() {
             <div>
               <h4>Quick Links</h4>
               <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#conditions">Conditions</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><Link to="/about">About Us</Link></li>
+                <li><Link to="/services">Services</Link></li>
+                <li><Link to="/conditions">Conditions</Link></li>
+                <li><Link to="/faq">FAQ</Link></li>
               </ul>
             </div>
 
             <div>
               <h4>Services</h4>
               <ul>
-                <li><a href="#services">Home Physiotherapy</a></li>
-                <li><a href="#services">Neuro Rehabilitation</a></li>
-                <li><a href="#services">Orthopedic Rehab</a></li>
-                <li><a href="#services">Geriatric Care</a></li>
+                <li><Link to="/services">Home Physiotherapy</Link></li>
+                <li><Link to="/services">Neuro Rehabilitation</Link></li>
+                <li><Link to="/services">Orthopedic Rehab</Link></li>
+                <li><Link to="/services">Geriatric Care</Link></li>
               </ul>
             </div>
 
@@ -36,11 +41,11 @@ function Footer() {
               <h4>Contact</h4>
               <ul>
                 <li>
-                  <a href="tel:+910000000000">+91 00000 00000</a>
+                  <a href="tel:+919656074605">+91 96560 74605</a>
                 </li>
                 <li>
-                  <a href="mailto:info@corviarehab.com">
-                    info@corviarehab.com
+                  <a href="mailto:corviarehab@gmail.com">
+                    corviarehab@gmail.com
                   </a>
                 </li>
               </ul>

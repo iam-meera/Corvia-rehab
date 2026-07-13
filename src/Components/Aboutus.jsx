@@ -1,8 +1,12 @@
+import aboutImage from "../assets/generated-about-rehab.jpg";
+
 function About() {
     return (
         <section className="services-bg" id="about">
             <div className="container about-wrap">
-                <div className="about-img">🩺</div>
+                <figure className="about-img">
+                    <img src={aboutImage} alt="Physiotherapy assessment at Corvia Rehab" />
+                </figure>
                 <div className="about-text">
                     <span className="section-tag">About Us</span>
                     <h2>Restoring Movement, Rebuilding Independence</h2>
