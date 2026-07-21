@@ -30,8 +30,8 @@ function Hero() {
             </a>
           </div>
           <div className="hero-stats">
-            <div><h3>500+</h3><p>Patients Treated</p></div>
-            <div><h3>10+</h3><p>Years Experience</p></div>
+            <div><h3>300+</h3><p>Patients Treated</p></div>
+            <div><h3>3+</h3><p>Years Experience</p></div>
           </div>
         </div>
         <figure className="hero-image">
