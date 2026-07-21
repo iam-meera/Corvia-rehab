@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import { FaBars, FaPhoneAlt, FaTimes, FaWhatsapp } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/corvia-logo.jpg";
 
@@ -20,7 +20,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
-      <nav className="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
+      <nav className="header-nav">
         <Link to="/" className="site-logo" aria-label="Corvia Rehab home">
           <img src={logo} alt="Corvia Rehab" />
         </Link>
@@ -56,20 +56,25 @@ function Header() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((current) => !current)}
-          className="lg:hidden flex flex-col gap-1"
+          className="mobile-menu-toggle lg:hidden flex"
         >
-          <span className={`w-7 h-1 bg-black rounded transition ${open ? "rotate-45 translate-y-2" : ""}`}></span>
-          <span className={`w-7 h-1 bg-black rounded transition ${open ? "opacity-0" : ""}`}></span>
-          <span className={`w-7 h-1 bg-black rounded transition ${open ? "-rotate-45 -translate-y-2" : ""}`}></span>
+          {open ? <FaTimes aria-hidden="true" /> : <FaBars aria-hidden="true" />}
         </button>
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="lg:hidden bg-white border-t">
-          <ul className="flex flex-col px-8 py-6 gap-5 text-lg">
+        <div id="mobile-menu" className="mobile-menu lg:hidden">
+          <ul className="mobile-menu-list">
             {navItems.map((item) => (
               <li key={item.to}>
-                <NavLink to={item.to} end={item.to === "/"} onClick={closeMenu}>
+                <NavLink
+                  to={item.to}
+                  end={item.to === "/"}
+                  onClick={closeMenu}
+                  className={({ isActive }) =>
+                    `mobile-menu-link ${isActive ? "active" : ""}`
+                  }
+                >
                   {item.label}
                 </NavLink>
               </li>
@@ -80,7 +85,7 @@ function Header() {
                 href="https://wa.me/919656074605"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-[#2E9E6B] text-white text-center py-3 rounded-full font-semibold mt-4"
+                className="mobile-book-button"
                 onClick={closeMenu}
               >
                 <span className="inline-flex items-center justify-center gap-2">
